@@ -36,7 +36,7 @@ public class DayOfYear {
     		Jan=Mar=May=Jul=Aug=Oct=Dec = 31;
     	int Apr,Jun,Sep,Nov;
     		Apr=Jun=Sep=Nov= 30;
-    	int Feb = 28;
+    	int Feb = 29;
     	if (year % 4 == 0) {//checking if it's leap year. WARNING!!! his is accurate only between years 1901-2099 
     		Feb += 1;//adding leap day to total number of days if it's leap year
     	}
