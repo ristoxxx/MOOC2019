@@ -1,5 +1,6 @@
 package yksikkotestaus;
-
+import java.util.*; 
+import java.time.*; 
 /**
  * Smelly Example #1
  * 
@@ -26,7 +27,7 @@ public class DayOfYear {
      */
     private DayOfYear() {
     }
-
+    //private IsLeapYear(Year)
     public static int dayOfYear(int month, int dayOfMonth, int year) {
     	if ((month < 0 || month > 12) || (year < 1901 || year > 2099)) {
     		return -1; //If input value is out of range, -1 will be returned. WARNING!!! does not check day of month
@@ -36,8 +37,10 @@ public class DayOfYear {
     		Jan=Mar=May=Jul=Aug=Oct=Dec = 31;
     	int Apr,Jun,Sep,Nov;
     		Apr=Jun=Sep=Nov= 30;
-    	int Feb = 29;
-    	if (year % 4 == 0) {//checking if it's leap year. WARNING!!! his is accurate only between years 1901-2099 
+    	int Feb = 28;
+    	//checking if it's leap year. WARNING!!! his is accurate only between years 1901-2099 
+    	Year leap = Year.of(year);
+    	if (leap.isLeap() == true) {
     		Feb += 1;//adding leap day to total number of days if it's leap year
     	}
     	int Zero = 0;//Just to make list easier to understand. First value of list will be zero so that months[1] will be Jan. 
