@@ -7,7 +7,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Lempinimet {
-	public static void main(String[] args) {http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=3274405
+	public static void main(String[] args) {
+		//http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=3274405
 		//TiedostonLukija lukija = new TiedostonLukija("etunimet.csv");
 		//List<String> rivit = lukija.lueRivit();
 		

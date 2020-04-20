@@ -1,5 +1,4 @@
-package yksikkotestaus;
-import java.util.*; 
+package yksikkotestaus; 
 import java.time.*; 
 /**
  * Smelly Example #1
