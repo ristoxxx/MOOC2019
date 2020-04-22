@@ -1,26 +1,26 @@
 package tietokantaJDBC;
-//import java.sql.DriverManager;
-//import java.util.Scanner;
-//
-//
-//public class Paaohjelma {
-//	public static void main(String[] args) {
-//        Scanner lukija = new Scanner(System.in);
-//        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lukija); 
-//        //Map<String, String> = new TreeMap<>();
-//        System.out.println("Welcome to the shopping list app!");
-//		kayttoliittyma.aloita();
-//		
-//		
-//		/*String x = nimi;
-//		System.out.println(x);
-//		Class.forName("org.sqlite.JDBC");
-//		String url      = "jdbc:sqlite:C:\\SQLite\\first.sqlite";
-//		String password = "";
-//		String user = "";
-//		Connection connection =
-//			    DriverManager.getConnection(url);
-//		return x;*/
-//		}
-//		
-//}
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Paaohjelma {
+    private static final String URL = "jdbc:sqlite:C:\\SQLite\\shoppingList.sqlite";
+
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        Class.forName("org.sqlite.JDBC");
+
+        Connection yhteys = DriverManager.getConnection(URL);				//prepare connection to database
+        
+        Scanner lukija = new Scanner(System.in);							//create scanner lukija
+		
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lukija,yhteys);	//Create user interface kayttoliittyma 
+
+        System.out.println("Welcome to the shopping list app!");			//Print welcome text 
+		kayttoliittyma.aloita();											//Start user interface
+																	        //close all resources      
+        yhteys.close();														//close connection
+        lukija.close();														//close scanner
+    }
+}
