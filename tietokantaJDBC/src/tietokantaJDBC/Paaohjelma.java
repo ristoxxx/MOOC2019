@@ -15,8 +15,11 @@ public class Paaohjelma {
         
         Scanner lukija = new Scanner(System.in);							//create scanner lukija
 		
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lukija,yhteys);	//Create user interface kayttoliittyma 
-
+        DAOpattern dao = new DAOpattern(yhteys);							//create interface and commands to control DB
+        
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lukija,dao);		//Create user interface kayttoliittyma 
+        
+       
         System.out.println("Welcome to the shopping list app!");			//Print welcome text 
 		kayttoliittyma.aloita();											//Start user interface
 																	        //close all resources      
