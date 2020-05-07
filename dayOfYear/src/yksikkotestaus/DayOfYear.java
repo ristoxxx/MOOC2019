@@ -46,6 +46,7 @@ public class DayOfYear {
     	}
     	return days;
     }
+    
 }
 /** Signature edition by @evermore
 public static int dayOfYear(int month, int dayOfMonth, int year) {

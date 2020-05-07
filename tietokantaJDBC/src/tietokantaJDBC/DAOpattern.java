@@ -9,16 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DAOpattern implements OstosRajapinta {
-	private static final String URL = "jdbc:sqlite:C:\\SQLite\\shoppingList.sqlite";	//DB location
+	private static final String URL = System.getenv("JDBC_DATABASE_URL");					//DB location 
 	private Connection yhteys = null;													//DB connection
 	private PreparedStatement kysely = null;											//DB query
 	private ResultSet tulokset = null;													//DB query results
-	private String error = "Something wnt wrong. No changes made.";						//Error message
+	private String error = "Something went wrong. No changes made.";						//Error message
 	private List<Ostos> ostokset;														//DB query results list
 
 	public DAOpattern() {																//Empty constructor
 	}
-
+	
+	public Connection connect() throws SQLException{									//connection setup for testing
+		yhteys = DriverManager.getConnection(URL);
+		return yhteys;
+	}
+	
 	public List<Ostos> listaa() {
 		ostokset = new ArrayList<Ostos>();												//Creating list ostokset for DB query results
 		nollaa();																		//Setting some values to null

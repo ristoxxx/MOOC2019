@@ -2,8 +2,6 @@ package yksikkotestaus;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.time.Month;
-
 import org.junit.jupiter.api.Test;
 
 class DayOfYearTest {
@@ -26,6 +24,8 @@ class DayOfYearTest {
 		int x = DayOfYear.dayOfYear(3, 1, 2019);
 		assertEquals(60, x);
 	}
+
+	
 	@Test
 	//Does last day of year give correct result if not leap year
 	public void neljas() {
